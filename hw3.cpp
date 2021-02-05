@@ -2,35 +2,38 @@
 // CPSC 2600 - hw3
 
 #include <iostream> 
+#include <string>
 using namespace std;
 
-const int U = 1111111111;
 const int CARDINALITY = 10;
-// Universal set U =  {0,1,2,3,4,5,6,7,8,9}
 const int STOP = -1; 
 
 void printSet(int bitstring);
+
+void printSetString(int bitstring);
 
 int main()
 {
   int setA, setB = 0; 
   int userInput, ABunion, ABint, ABdiff, notB;
 
-  while(userInput != STOP) {
-    cout << "Please enter values in set A or -1 to stop: ";
+  cout << endl << endl << "Welcome to hw3...." << endl;
+
+  while(userInput != STOP) { // Universal set =  {0,1,2,3,4,5,6,7,8,9}
+    cout << "Please enter a value in set A (or -1 to stop): ";
     cin >> userInput;
-    for(int i = 0; i < userInput; i++) {
+    for(int i = 0; i <= userInput; i++) {
       setA |= (1 << userInput);
     }
   }
 
   userInput = 0; 
-  cout << endl << endl;
+  cout << endl;
 
   while(userInput != STOP) {
-    cout << "Please enter values in set B or -1 to stop: ";
+    cout << "Please enter a value in set B (or -1 to stop): ";
     cin >> userInput;
-    for(int i = 0; i < userInput; i++) {
+    for(int i = 0; i <= userInput; i++) {
       setB |= (1 << userInput);
     }
   }
@@ -56,19 +59,20 @@ int main()
   notB = ~setB;
   ABdiff = setA & notB; 
   printSet(ABdiff);
-  cout << endl << endl;
+  cout << endl;
   
+  cout << "Exiting hw3..." << endl << endl;
+  return 0; 
 }
 
 void printSet(int bitstring)
 {
-  string set = "{";
-
+  int setTemp = bitstring; 
+  cout << "{ ";
   for(int i = 0; i < CARDINALITY; i++) {
-    if (1 << i & bitstring) {
-      set += i + ", ";
+    if(1 << i & setTemp) {
+      cout << i << " ";
     }
   }
-  set += "}";
-  cout << set << endl;
+  cout << "}" << endl;
 }
