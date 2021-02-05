@@ -1,16 +1,19 @@
 // Ovalles, Isabel
-// CPSC 2600 - hw3
+// hw3.cpp
+// 2-4-2021
+
+// Universal Set = {0,1,2,3,4,5,6,7,8,9}
 
 #include <iostream> 
-#include <string>
 using namespace std;
 
 const int CARDINALITY = 10;
 const int STOP = -1; 
 
 void printSet(int bitstring);
-
-void printSetString(int bitstring);
+// Prints out the elements in a set given a bitstring representation. 
+// PRE: Incoming bitstring consists of only zeros and ones. 
+// POST: The set is displayed on screen. 
 
 int main()
 {
@@ -19,10 +22,10 @@ int main()
 
   cout << endl << endl << "Welcome to hw3...." << endl;
 
-  while(userInput != STOP) { // Universal set =  {0,1,2,3,4,5,6,7,8,9}
+  while(userInput != STOP) { 
     cout << "Please enter a value in set A (or -1 to stop): ";
     cin >> userInput;
-    for(int i = 0; i <= userInput; i++) {
+    for(int i = 0; i <= userInput; i++) { // building bitstring right to left
       setA |= (1 << userInput);
     }
   }
@@ -70,7 +73,7 @@ void printSet(int bitstring)
   int setTemp = bitstring; 
   cout << "{ ";
   for(int i = 0; i < CARDINALITY; i++) {
-    if(1 << i & setTemp) {
+    if(1 << i & setTemp) { 
       cout << i << " ";
     }
   }
