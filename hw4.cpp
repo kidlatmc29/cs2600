@@ -6,11 +6,11 @@
 
 using namespace std;
 
-void mergesort(int *list[], int l, int r);
-// sorting here
+void mergesort(int *list, int low, int high);
+// halfs array then calls merge fxn
 
-void merge(int *list[], int l, int m, int r);
-// merges two sequences of list[]
+void merge(int *list, int low, int high, int middle);
+// merges two sequences sorted in an array
 
 int main()
 {
@@ -38,4 +38,46 @@ int main()
 
   cout << endl << endl << "HW4 complete." << endl << endl;
   return 0; 
+}
+
+void merge(int* list, int low, int high, int middle)
+{
+  int temp[high - low + 1], i, j, k;
+  i = low; 
+  j = 0;
+  k = middle + 1; 
+
+  while (i <= middle && k <= high) {
+    if (list[i] < list[k]) {
+      temp[j] = list[i];
+      i++;
+      k++;
+    } else {
+      temp[k] = list[j];
+      k++;
+      j++;
+    }
+  } 
+
+  while (i <= middle) {
+    temp[k] = list[i];
+    k++;
+    i++;
+  }
+  while (j <= high) {
+    temp[k] = list[j];
+    k++;
+    j++;
+  }
+
+  // copying values from temp[] into list[]
+
+  for (int i = low; i <= high; i++) {
+    list[i] = temp[i - low];
+  }
+}
+
+void mergesort(int* list, int low, int high)
+{
+
 }

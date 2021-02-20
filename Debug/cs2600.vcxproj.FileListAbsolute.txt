@@ -1,0 +1,2 @@
+C:\dev\cs2600\Debug\cs2600.exe
+C:\dev\cs2600\Debug\cs2600.pdb
