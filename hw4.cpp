@@ -29,7 +29,7 @@ int main()
     list[i] = userInput;
   }
 
-  // merge sort goes here
+  mergesort(list, 0, listLength - 1);
 
   cout << endl << "Printing out list..." << endl;
   for(int i = 0; i < listLength; i++) {
@@ -42,42 +42,53 @@ int main()
 
 void merge(int* list, int low, int high, int middle)
 {
-  int temp[high - low + 1], i, j, k;
-  i = low; 
-  j = 0;
-  k = middle + 1; 
+  int* temp = new int[high - low + 1];
+  // counter vars for the least, greatest vals
+  int i = low;
+  int j = middle + 1;
+  int k = 0;
 
-  while (i <= middle && k <= high) {
-    if (list[i] < list[k]) {
-      temp[j] = list[i];
-      i++;
+  while (i <= middle && j <= high) {
+    if (list[i] < list[j]) {
+      temp[k] = list[i];
       k++;
+      i++;
     } else {
       temp[k] = list[j];
       k++;
       j++;
     }
-  } 
+  }
 
   while (i <= middle) {
     temp[k] = list[i];
     k++;
     i++;
   }
+
   while (j <= high) {
-    temp[k] = list[j];
+    temp[k] = list[i];
     k++;
     j++;
   }
 
   // copying values from temp[] into list[]
-
-  for (int i = low; i <= high; i++) {
-    list[i] = temp[i - low];
+  for (int index = low; index <= high; index++) {
+    list[index] = temp[index - low];
   }
-}
+
+  delete[] temp;
+ }
 
 void mergesort(int* list, int low, int high)
 {
+  int middle = 0;
 
+  if (low < high) {
+    middle = (low + high) / 2;
+    mergesort(list, low, middle);
+    mergesort(list, middle + 1, high);
+
+    merge(list, low, high, middle);
+  }
 }
