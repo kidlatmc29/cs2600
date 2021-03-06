@@ -2,7 +2,6 @@
 // Isabel Ovalles
 // 3-4-2021
 
-#include <iostream>
 #include "Graph.h"
 
 Graph::Graph()
@@ -20,12 +19,20 @@ Graph::~Graph()
   adjMatrix = nullptr;
 }
 
-void Graph::load(char* filename)
+void Graph::load(string filename)
 {
+  ifstream input; 
+  string line; 
+
+  input.open(filename);
+
+  if(!input.fail()) {
+    cin >> numOfVertices; // first num in file is numOfVertices
+  }
 
 }
 
 void Graph::display()
 {
-  
+  cout << "The number of verticies in this graph is " << numOfVertices << endl;
 }

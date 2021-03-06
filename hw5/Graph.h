@@ -2,6 +2,8 @@
 // Isabel Ovalles
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -12,17 +14,17 @@ class Graph {
     
   public:
     Graph();
-    // default constructor
+    // default constructor.
     // Pre: None.
     // Post: sets numOfVertices to 0 and creates an empty adjMatrix.
 
     ~Graph();
-    // deconstructor
+    // deconstructor.
     // Pre: None.
     // Post: deallocates adjMaxtrix and sets numOfVertices to 0.
 
-    void load(char* filename);
-    // creates a graph using input file
+    void load(string filename);
+    // creates a graph using input file.
     // Pre: Assuming filename is correct and the file is properly formatted.
     // Post:
 

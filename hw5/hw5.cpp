@@ -19,7 +19,11 @@ int main()
   cout << "The file you entered was: " << filename << endl;
 
   // 2.) Load info into graph from input file
+  myGraph.load(filename);
+
   // 3.) Display adjacency matrix
+  myGraph.display();
+
   // 4.) Display depth first search
   // 5.) Display breadth first search
 
