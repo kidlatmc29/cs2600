@@ -15,7 +15,7 @@ class Graph {
     void addEdge(int x, int y);
     // helper function for load. adds a new edge into the adjMatrix. 
 
-    void displayDFS(int vertex, bool visited[]);
+    void displayDFS(int vertex, bool *visited);
     // helper function for displayDFS
 
   public:

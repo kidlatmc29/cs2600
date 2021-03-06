@@ -21,8 +21,8 @@ Graph::~Graph()
 void Graph::load(string filename)
 {
   ifstream input; 
-  int x;
-  int y; 
+  int x; // vertex 1
+  int y;  // vertex 2
 
   input.open(filename);
 
@@ -69,11 +69,11 @@ void Graph::displayDFS(int vertex)
   delete[] visited;
 }
 
-void Graph::displayDFS(int vertex, bool visited[])
+void Graph::displayDFS(int vertex, bool *visited)
 {
   cout << vertex << " ";
   visited[vertex] = true;
-  for(int i = 0; i < vertex; i++) {
+  for(int i = 0; i < numOfVertices; i++) {
     if(adjMatrix[vertex][i] == 1 && (!visited[i])) {
       displayDFS(i, visited);
     }
