@@ -42,7 +42,7 @@ int main()
 
 void merge(int* list, int low, int high, int middle)
 {
-  int* temp = new int[high - low + 1];
+  int* temp = new int[(high - low) + 1];
   // counter vars for the least, greatest vals
   int i = low;
   int j = middle + 1;
