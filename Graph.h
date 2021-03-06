@@ -1,5 +1,5 @@
-#Graph.h
-#Isabel Ovalles
+// Graph.h
+// Isabel Ovalles
 
 #include <iostream>
 
@@ -7,25 +7,27 @@ using namespace std;
 
 class Graph {
   private:
+    int** adjMatrix = nullptr; // 2-D array for adjacency matrix of the graph
+    int numOfVertices; 
     
   public:
     Graph();
     // default constructor
     // Pre: None.
-    // Post: Creates an empty Graph
+    // Post: sets numOfVertices to 0 and creates an empty adjMatrix.
 
     ~Graph();
     // deconstructor
     // Pre: None.
-    // Post:
+    // Post: deallocates adjMaxtrix and sets numOfVertices to 0.
 
     void load(char* filename);
     // creates a graph using input file
-    // Pre:
+    // Pre: Assuming filename is correct and the file is properly formatted.
     // Post:
 
     void display();
-    // displays the graph's adcency matrix
+    // displays the graph's adjacency matrix
     // Pre:
     // Post:
 
@@ -40,4 +42,4 @@ class Graph {
     // vertex. With a choice, picks the lower number.
     // Pre:
     // Post:
-}
+};
