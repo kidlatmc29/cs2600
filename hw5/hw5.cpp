@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-  char *filename; 
+  string filename; 
   Graph myGraph;
   
   cout << endl << endl
