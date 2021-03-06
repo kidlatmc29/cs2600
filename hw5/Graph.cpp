@@ -21,7 +21,6 @@ Graph::~Graph()
 void Graph::load(string filename)
 {
   ifstream input; 
-  int num; 
   int x;
   int y; 
 
@@ -50,6 +49,7 @@ void Graph::addEdge(int x, int y)
 
 void Graph::display()
 {
+  cout << "Adjacency Matrix:" << endl;
   for(int row = 0; row < numOfVertices; row++) {
     for(int col = 0; col < numOfVertices; col++) {
       cout << adjMatrix[row][col] << " ";

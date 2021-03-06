@@ -16,12 +16,11 @@ int main()
        << "Please enter a file name to create a graph: ";
   cin >> filename;
 
-  cout << "The file you entered was: " << filename << endl;
-
   // 2.) Load info into graph from input file
   myGraph.load(filename);
 
   // 3.) Display adjacency matrix
+  cout << endl;
   myGraph.display();
 
   // 4.) Display depth first search
