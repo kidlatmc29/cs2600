@@ -1,4 +1,4 @@
-// Main.cpp
+// hw5.cpp
 // Isabel Ovalles
 
 #include <iostream>
