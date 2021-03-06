@@ -58,3 +58,25 @@ void Graph::display()
   }
   cout << endl;
 }
+
+void Graph::displayDFS(int vertex)
+{
+  bool *visited = new bool[numOfVertices];
+  for(int i = 0; i < numOfVertices; i++) {
+    visited[i] = false; 
+  }
+  displayDFS(vertex, visited);
+  delete[] visited;
+}
+
+void Graph::displayDFS(int vertex, bool visited[])
+{
+  cout << vertex << " ";
+  visited[vertex] = true;
+  for(int i = 0; i < vertex; i++) {
+    if(adjMatrix[vertex][i] == 1 && (!visited[i])) {
+      displayDFS(i, visited);
+    }
+  }
+}
+

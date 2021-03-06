@@ -24,6 +24,8 @@ int main()
   myGraph.display();
 
   // 4.) Display depth first search
+  cout << "DFS at vertex 0: ";
+  myGraph.displayDFS(0);
   // 5.) Display breadth first search
 
   cout << "HW 5 completed. Exiting program....." << endl << endl;
