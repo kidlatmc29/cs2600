@@ -19,8 +19,6 @@ class Graph {
     void displayDFS(int vertex, bool *visited);
     // helper function for displayDFS
 
-    // void displayBFS(int vertex)
-
   public:
     Graph();
     // default constructor.

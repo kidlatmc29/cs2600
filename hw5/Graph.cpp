@@ -87,19 +87,19 @@ void Graph::displayBFS(int vertex)
   for(int i = 0; i < numOfVertices; i++) {
     visited[i] = false; 
   }
-
   cout << vertex << " ";
   visited[vertex] = true;
   q.push(vertex);
 
-  int currentV; // for printing out the current vertex
+  int currentV; 
   while(!q.empty()) {
-    currentV = q.front(); // dequeues vertex and prints it
+    currentV = q.front();
     q.pop();
 
     for(int i = 0; i < numOfVertices; i++) {
       if(adjMatrix[currentV][i] == 1 && (!visited[i])) {
         q.push(i);
+        cout << i << " "; //print out current vertex 
         visited[i] = true; 
       }
     }

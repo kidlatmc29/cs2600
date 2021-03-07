@@ -11,7 +11,7 @@ int main()
   string filename; 
   Graph myGraph;
   
-  cout << endl << endl
+  cout << endl
        << "HW 5 - Graphs" << endl << endl
        << "Please enter a file name to create a graph: ";
   cin >> filename;
@@ -28,6 +28,9 @@ int main()
   myGraph.displayDFS(0);
   cout << endl;
   // 5.) Display breadth first search
+  cout << "BFS at vertex 0: ";
+  myGraph.displayBFS(0);
+  cout << endl << endl;
 
   cout << "HW 5 completed. Exiting program....." << endl << endl;
   return 0; 
